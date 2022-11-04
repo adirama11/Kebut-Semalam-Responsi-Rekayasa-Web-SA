@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .work-sans {
+          font-family: 'Work Sans', sans-serif;
+      }
+              
+      #menu-toggle:checked + #menu {
+          display: block;
+      }
+      
+      .hover\:grow {
+          transition: all 0.3s;
+          transform: scale(1);
+      }
+      
+      .hover\:grow:hover {
+          transform: scale(1.02);
+      }
+      
+      .carousel-open:checked + .carousel-item {
+          position: static;
+          opacity: 100;
+      }
+      
+      .carousel-item {
+          -webkit-transition: opacity 0.6s ease-out;
+          transition: opacity 0.6s ease-out;
+      }
+      
+      #carousel-1:checked ~ .control-1,
+      #carousel-2:checked ~ .control-2,
+      #carousel-3:checked ~ .control-3 {
+          display: block;
+      }
+      
+      .carousel-indicators {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          bottom: 2%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          z-index: 10;
+      }
+      
+      #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+      #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+      #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+          color: #000;
+          /*Set to match the Tailwind colour you want the active one to be */
+      }
+  </style>
+</head>
+<body>
+  <!-- Tampilan Perusahaan -->
+<div class="carousel relative container mx-auto" style="max-width:1600px;">
+  <div class="carousel-inner relative overflow-hidden w-full">
+      <!--Slide 1-->
+      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+          <div class=" h-full w-full mx-auto  pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://laptopnesia.com/wp-content/uploads/2021/02/ASUS-ROG-Zephyrus-Duo-2.jpg');">
+          </div>
+      </div>
+      <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+      <!--Slide 2-->
+      <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+          <div class=" h-full w-full mx-auto  pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://images.wallpaperscraft.com/image/single/laptop_phone_desktop_179989_3840x2400.jpg');">
+          </div>
+      </div>
+      <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+      <!--Slide 3-->
+      <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+          <div class="h-full w-full mx-auto pt-6 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikJNYZBEEERd5zLHzPiJ9mJca_jfcBe7M32dt5_xnER-Jd10bxpj-SnplKeCO-gvxily3SCRrpSEn_Y9pGj5umULfo7S5A5McUtD_zzjbABcaJWRF0liPiF_Nn8uur1xQtyp3z4f--XlDk7b6BfJK2NCcHWvO7gT-IzukKIxD5wfBURfC0NGu1Dfzw/s800/Laptop-Gaming-Terbaik-rog-strix-scar-15-2022-series.png');">
+          </div>
+      </div>
+      <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+      <!-- Add additional indicators for each slide-->
+      <ol class="carousel-indicators">
+          <li class="inline-block mr-3">
+              <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+          <li class="inline-block mr-3">
+              <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+          <li class="inline-block mr-3">
+              <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+      </ol>
+  </div>
+</div>
+  <!-- header -->
+  <div class="bg-fixed" style="background-image: url(https://cdn.pixabay.com/photo/2018/01/25/20/53/lifestyle-3107041__340.jpg)"></div>  
+  <nav class="bg-gradient-to-r rounded from-stone-600 via-stone-800 to-stone-900 border-gray-200 px-2 sm:px-4 py-1.5 dark:bg-stone-900">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+  <a href="" class="flex items-center">
+      <img src="" class="mr-3 h-6 sm:h-9">
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Jtronik</span>
+  </a>
+  <div class="flex md:order-2">
+      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+  <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+    <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+        <li>
+          <a href="{{url_for('index')}}" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 hover:underline">Dasboard</a>
+        </li>
+        <li class="text-gray-400">|</li>
+        <li>
+          <a href="{{url_for('produk')}}" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 hover:underline">Produk</a>
+        </li>
+        <li class="text-gray-400">|</li>
+        <li>
+          <a href="{{url_for('kontak')}}" class="l-3 text-white bg-blue-700 rounded md:bg-transparent md:text-white md:p-0 dark:text-white hover:underline" aria-current="page">Kontak</a>
+        </li>
+        <li>
+            <a href="{{url_for('login')}}" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 hover:underline">Login</a>
+          </li>
+      </ul>
+  </div>
+  </div>
+</nav>
+<!-- isi -->
+<section class="bg-stone-300">
+    <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+        <!--Left Col-->
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+            <p class="uppercase tracking-loose">Contact Us</p>
+            <h1 class="font-bold text-3xl my-4">Jtronik</h1>      
+            <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your Email</label>
+            <div class="relative">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+            </div>
+            <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-200 dark:border-black dark:placeholder-stone-300 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@gmail.com">
+            </div><br>
+            <div class="flex items-center">
+                <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="checked-checkbox" class="ml-2 text-sm font-medium text-black dark:text-black">Syarat dan Ketentuan</label>
+            </div><br>
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-emerald-600 to-sky-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0">
+                    Submit
+                </span>
+            </button>
+        </div>
+    </div>
+  <!-- footer -->
+    <footer class="container mx-auto bg-stone-300 py-4 border-t border-gray-400">
+        <h3 class="block text-sm text-black sm:text-center dark:text-black">Copyright Jtronik 2022</h3>
+    </footer>
+</body>
+</html>
